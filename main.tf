@@ -1,14 +1,3 @@
-variable "vpc_name" {
-  type = string
-  description = "Default prefix used to name the VPN and other resources associated with it"
-  default = "AAA"
-}
-
-variable "vpc_cidr" {
-  type = string
-  description = "CIDR block for the VPN currently only /16 is supported as /24 will be reserved for the subnets"
-  default = "10.1.0.0/16"
-}
 
 data "aws_availability_zones" "available" {}
 
@@ -268,30 +257,4 @@ resource "aws_security_group" "SSH_ICMP_WEB_IPERF" {
     Name = format("%s_%s",var.vpc_name,"SSH_ICMP")
   }
 
-}
-
-
-output "SSH_ICMP" {
-  value = aws_security_group.SSH_ICMP.id
-}
-output "SSH_ICMP_WEB_IPERF" {
-  value = aws_security_group.SSH_ICMP_WEB_IPERF.id
-}
-output "SUBNET10" {
-  value = aws_subnet.SUBNET10.id
-}
-output "SUBNET11" {
-  value = aws_subnet.SUBNET11.id
-}
-output "SUBNET12" {
-  value = aws_subnet.SUBNET12.id
-}
-output "SUBNET20" {
-  value = aws_subnet.SUBNET20.id
-}
-output "SUBNET21" {
-  value = aws_subnet.SUBNET21.id
-}
-output "SUBNET22" {
-  value = aws_subnet.SUBNET22.id
 }
