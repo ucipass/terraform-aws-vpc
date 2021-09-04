@@ -4,7 +4,8 @@ provider "aws" {
   version = "~> 2.3"
 }
 
-module "ubuntu" {
-  source  = "ucipass/ubuntu/aws"
-  version = "0.0.2"
+module "vpc" {
+  source  = "ucipass/vpc/aws"
+  vpc_name = "AA"
+  vpc_cidr = "10.2.0.0/16"
 }
