@@ -1,3 +1,7 @@
+output "vpc_id" {
+  value = aws_vpc.AAVPC.id
+}
+
 output "SSH_ICMP" {
   value = aws_security_group.SSH_ICMP.id
 }
