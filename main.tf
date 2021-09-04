@@ -1,7 +1,7 @@
 variable "vpc_name" {
   type = string
   description = "Default prefix used to name the VPN and other resources associated with it"
-  default = "AA"
+  default = "AAA"
 }
 
 variable "vpc_cidr" {
